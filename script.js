@@ -5,7 +5,7 @@ class Calculator {
       this.currentOperandTextElement = currentOperandTextElement
       this.clear()
     }
-    
+
     clear() {
       this.currentOperand = ''
       this.previousOperand = ''
@@ -46,7 +46,7 @@ class Calculator {
         case '*':
           computation = prev * current
           break
-        case '÷':
+        case '/':
           computation = prev / current
           break
         default:
@@ -198,6 +198,7 @@ document.addEventListener('keydown', function (e) {
         calculator.updateDisplay()
         break;
       case 'Enter':
+        e.preventDefault()
         calculator.compute()
         calculator.updateDisplay()
         break;
