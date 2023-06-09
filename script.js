@@ -1,20 +1,21 @@
+//Class Calculator and its functions
 class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement) {
       this.previousOperandTextElement = previousOperandTextElement
       this.currentOperandTextElement = currentOperandTextElement
       this.clear()
     }
-  
+    
     clear() {
       this.currentOperand = ''
       this.previousOperand = ''
       this.operation = undefined
     }
-  
+
     delete() {
       this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
-  
+
     appendNumber(number) {
       if (number === '.' && this.currentOperand.includes('.')) return
       this.currentOperand = this.currentOperand.toString() + number.toString()
@@ -124,3 +125,89 @@ class Calculator {
     calculator.delete()
     calculator.updateDisplay()
   })
+
+  
+document.addEventListener('keydown', function (e) {
+    switch (e.key) {
+      case '0':
+        calculator.appendNumber(e.key)
+        calculator.updateDisplay()
+        break;
+      case '1':
+        calculator.appendNumber(e.key)
+        calculator.updateDisplay()
+        break;
+      case '2':
+        calculator.appendNumber(e.key)
+        calculator.updateDisplay()
+        break;
+      case '3':
+        calculator.appendNumber(e.key)
+        calculator.updateDisplay()
+        break;
+      case '4':
+        calculator.appendNumber(e.key)
+        calculator.updateDisplay()
+        break;
+      case '5':
+        calculator.appendNumber(e.key)
+        calculator.updateDisplay()
+        break;
+      case '6':
+        calculator.appendNumber(e.key)
+        calculator.updateDisplay()
+        break;
+      case '7':
+        calculator.appendNumber(e.key)
+        calculator.updateDisplay()
+        break;
+      case '8':
+        calculator.appendNumber(e.key)
+        calculator.updateDisplay()
+        break;
+      case '9':
+        calculator.appendNumber(e.key)
+        calculator.updateDisplay()
+        break;
+      case '+':
+        calculator.chooseOperation(e.key)
+        calculator.updateDisplay()
+        break;
+      case '-':
+        calculator.chooseOperation(e.key)
+        calculator.updateDisplay()
+        break;
+      case '*':
+        calculator.chooseOperation(e.key)
+        calculator.updateDisplay()
+        break;
+      case '/':
+        calculator.chooseOperation(e.key)
+        calculator.updateDisplay()
+        break;
+      case '.':
+        calculator.appendNumber(e.key)
+        calculator.updateDisplay()
+        break;
+      case '(':
+        calculator.appendNumber(e.key)
+        calculator.updateDisplay()
+        break;
+      case ')':
+        calculator.appendNumber(e.key)
+        calculator.updateDisplay()
+        break;
+      case 'Enter':
+        calculator.compute()
+        calculator.updateDisplay()
+        break;
+      case 'Backspace':
+        calculator.delete()
+        calculator.updateDisplay()
+        break;
+      case 'Escape':
+        calculator.clear()
+        calculator.updateDisplay()
+        break;
+    }
+  });
